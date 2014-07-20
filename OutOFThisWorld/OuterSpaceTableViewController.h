@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AstronomicalData.h"
 
 @interface OuterSpaceTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *planets; 
+@property (nonatomic, strong) NSMutableArray *planets;
 
 @end
