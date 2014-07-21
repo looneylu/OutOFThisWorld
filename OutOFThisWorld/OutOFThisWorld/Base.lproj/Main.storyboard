@@ -46,10 +46,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Planets" id="Fh5-dV-DaL"/>
+                    <connections>
+                        <segue destination="tGp-L3-e0H" kind="push" identifier="pushToSpaceData" id="RVa-Rr-jpu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jK-dA-qrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="795"/>
+            <point key="canvasLocation" x="421" y="72"/>
         </scene>
         <!--Space Image View Controller-->
         <scene sceneID="AxN-4i-xud">
@@ -77,9 +80,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmI-gT-766" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="795"/>
+            <point key="canvasLocation" x="879" y="385"/>
         </scene>
-        <!--Space Data View Controller-->
+        <!--Space Data View Controller - Details-->
         <scene sceneID="cbp-ap-b4n">
             <objects>
                 <viewController id="tGp-L3-e0H" customClass="LRCSpaceDataViewController" sceneMemberID="viewController">
@@ -98,7 +101,7 @@
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" textLabel="uqy-lY-NoC" detailTextLabel="JPB-Nf-7PJ" style="IBUITableViewCellStyleValue1" id="bAo-Am-gGd">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bAo-Am-gGd" id="gds-bW-bQP">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -131,13 +134,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="aOa-12-7or"/>
                     <connections>
                         <outlet property="tableView" destination="W40-bG-vmQ" id="6aK-fU-TKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5X-Ix-iJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="72"/>
+            <point key="canvasLocation" x="879" y="-285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g6q-73-Cuw">
@@ -155,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byw-tY-oMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="72"/>
+            <point key="canvasLocation" x="3" y="72"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

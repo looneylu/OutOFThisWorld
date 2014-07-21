@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LRCSpaceObject.h"
 
 @interface LRCSpaceDataViewController : UIViewController
+
+@property (strong, nonatomic) LRCSpaceObject *spaceObject;
 
 @end

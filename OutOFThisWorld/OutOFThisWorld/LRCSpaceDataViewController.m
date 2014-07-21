@@ -7,12 +7,11 @@
 //
 
 #import "LRCSpaceDataViewController.h"
-#import "LRCSpaceObject.h"
 
 @interface LRCSpaceDataViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) LRCSpaceObject *spaceObject;
+
 
 @end
 
@@ -44,23 +43,23 @@
             break;
         case 1 :
             cell.textLabel.text = @"Diameter (km):";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.diameter];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.3f", self.spaceObject.diameter];
             break;
         case 2 :
             cell.textLabel.text = @"Gravitation Force:";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.gravitationalForce];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.3f", self.spaceObject.gravitationalForce];
             break;
         case 3 :
             cell.textLabel.text = @"Length of Days (in hours)";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.dayLength];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.3f", self.spaceObject.dayLength];
             break;
         case 4 :
             cell.textLabel.text = @"Length of Years (in days)";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.yearLength];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.3f", self.spaceObject.yearLength];
             break;
         case 5 :
             cell.textLabel.text = @"Temperature (celcius)";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.temperature];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.3f", self.spaceObject.temperature];
             break;
         case 6 :
             cell.textLabel.text = @"Number of Moons";
