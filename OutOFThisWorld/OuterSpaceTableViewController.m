@@ -8,13 +8,18 @@
 
 #import "OuterSpaceTableViewController.h"
 #import "LRCSpaceObject.h"
+#import "LRCSpaceImageViewController.h"
 
 
 @interface OuterSpaceTableViewController ()
 
+
+
 @end
 
 @implementation OuterSpaceTableViewController
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,6 +54,22 @@
 //    NSLog(@"%@", [myDictionary objectForKey:@"Ocean color"]);
 
 
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]])
+    {
+        if ([segue.destinationViewController isKindOfClass:[LRCSpaceImageViewController class]])
+        {
+            LRCSpaceImageViewController *nextViewController = segue.destinationViewController;
+            
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            LRCSpaceObject *selectedObject = [self.planets objectAtIndex:path.row];
+            
+            nextViewController.spaceObject = selectedObject;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,6 +117,12 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%i", indexPath.row); 
+}
 
 /*
 // Override to support conditional editing of the table view.
