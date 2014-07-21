@@ -144,7 +144,6 @@
 				84E0D6EB197C5A3100A0D7AC /* Model */,
 				84E0D66B197C448500A0D7AC /* Images.xcassets */,
 				84E0D6D3197C59EF00A0D7AC /* planet-images */,
-				84E0D68B197C4DA300A0D7AC /* astronmical-data-model */,
 				84E0D65A197C448500A0D7AC /* Supporting Files */,
 			);
 			path = OutOFThisWorld;
@@ -210,6 +209,7 @@
 		84E0D6EB197C5A3100A0D7AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84E0D68B197C4DA300A0D7AC /* astronmical-data-model */,
 				84E0D6E8197C5A2500A0D7AC /* LRCSpaceObject.h */,
 				84E0D6E9197C5A2500A0D7AC /* LRCSpaceObject.m */,
 			);
