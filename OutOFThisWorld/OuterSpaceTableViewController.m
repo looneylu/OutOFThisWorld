@@ -10,6 +10,7 @@
 #import "LRCSpaceObject.h"
 #import "LRCSpaceImageViewController.h"
 #import "LRCSpaceDataViewController.h"
+#import "LRCAddSpaceObjectViewController.h"
 
 
 @interface OuterSpaceTableViewController ()
@@ -81,6 +82,12 @@
 {
 // #warning Potentially incomplete method implementation.
     // Return the number of sections.
+    
+    // if there are objects in addedPlanets, there should be 2 sections.
+    // otherwise, one 1 section
+    if (self.addedPlanets)
+        return 2;
+    
     return 1;
 }
 
@@ -88,7 +95,8 @@
 {
 // #warning Incomplete method implementation.
     // Return the number of rows in the section.
-
+    if (section == 1)
+        return [self.addedPlanets count];
     return [self.planets count];
 }
 
@@ -99,17 +107,24 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
-    LRCSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
-    cell.textLabel.text = planet.name;
-    cell.detailTextLabel.text = planet.nickname;
-    cell.imageView.image = planet.spaceImage;
+    if (indexPath.section == 1)
+    {
+        
+    }
+    else
+    {
+        // Access the LRCSPaceObject from planets array. Use the LRCSpaceObject's
+        // properties
+        LRCSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
+        cell.textLabel.text = planet.name;
+        cell.detailTextLabel.text = planet.nickname;
+        cell.imageView.image = planet.spaceImage;
+        
+    }
     
     cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor blackColor];
     cell.detailTextLabel.textColor = [UIColor colorWithWhite:.5 alpha:1.0];
-    
-
     
     return cell;
 }

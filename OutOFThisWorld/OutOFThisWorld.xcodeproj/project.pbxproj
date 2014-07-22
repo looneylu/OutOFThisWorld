@@ -35,6 +35,7 @@
 		84E0D6EA197C5A2500A0D7AC /* LRCSpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D6E9197C5A2500A0D7AC /* LRCSpaceObject.m */; };
 		84E0D73B197C94D400A0D7AC /* LRCSpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D73A197C94D400A0D7AC /* LRCSpaceImageViewController.m */; };
 		84E0D7C5197D28F300A0D7AC /* LRCSpaceDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D7C4197D28F300A0D7AC /* LRCSpaceDataViewController.m */; };
+		84E0D7C8197E08C500A0D7AC /* LRCAddSpaceObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D7C7197E08C500A0D7AC /* LRCAddSpaceObjectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		84E0D73A197C94D400A0D7AC /* LRCSpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCSpaceImageViewController.m; sourceTree = "<group>"; };
 		84E0D7C3197D28F300A0D7AC /* LRCSpaceDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCSpaceDataViewController.h; sourceTree = "<group>"; };
 		84E0D7C4197D28F300A0D7AC /* LRCSpaceDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCSpaceDataViewController.m; sourceTree = "<group>"; };
+		84E0D7C6197E08C500A0D7AC /* LRCAddSpaceObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCAddSpaceObjectViewController.h; sourceTree = "<group>"; };
+		84E0D7C7197E08C500A0D7AC /* LRCAddSpaceObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCAddSpaceObjectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				84E0D665197C448500A0D7AC /* Main.storyboard */,
-				84E0D7C3197D28F300A0D7AC /* LRCSpaceDataViewController.h */,
-				84E0D7C4197D28F300A0D7AC /* LRCSpaceDataViewController.m */,
-				84E0D688197C44C600A0D7AC /* OuterSpaceTableViewController.h */,
-				84E0D689197C44C600A0D7AC /* OuterSpaceTableViewController.m */,
-				84E0D739197C94D400A0D7AC /* LRCSpaceImageViewController.h */,
-				84E0D73A197C94D400A0D7AC /* LRCSpaceImageViewController.m */,
+				84E0D7C9197E13C300A0D7AC /* View Controllers */,
 				84E0D6EB197C5A3100A0D7AC /* Model */,
 				84E0D66B197C448500A0D7AC /* Images.xcassets */,
 				84E0D6D3197C59EF00A0D7AC /* planet-images */,
@@ -224,6 +222,21 @@
 				84E0D6E9197C5A2500A0D7AC /* LRCSpaceObject.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		84E0D7C9197E13C300A0D7AC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84E0D7C6197E08C500A0D7AC /* LRCAddSpaceObjectViewController.h */,
+				84E0D7C7197E08C500A0D7AC /* LRCAddSpaceObjectViewController.m */,
+				84E0D7C3197D28F300A0D7AC /* LRCSpaceDataViewController.h */,
+				84E0D7C4197D28F300A0D7AC /* LRCSpaceDataViewController.m */,
+				84E0D688197C44C600A0D7AC /* OuterSpaceTableViewController.h */,
+				84E0D689197C44C600A0D7AC /* OuterSpaceTableViewController.m */,
+				84E0D739197C94D400A0D7AC /* LRCSpaceImageViewController.h */,
+				84E0D73A197C94D400A0D7AC /* LRCSpaceImageViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E0D7C8197E08C500A0D7AC /* LRCAddSpaceObjectViewController.m in Sources */,
 				84E0D68A197C44C600A0D7AC /* OuterSpaceTableViewController.m in Sources */,
 				84E0D7C5197D28F300A0D7AC /* LRCSpaceDataViewController.m in Sources */,
 				84E0D73B197C94D400A0D7AC /* LRCSpaceImageViewController.m in Sources */,
