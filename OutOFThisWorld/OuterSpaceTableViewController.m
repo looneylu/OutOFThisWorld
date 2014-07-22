@@ -73,6 +73,12 @@
             targetViewController.spaceObject = selectedObject;
         }
     }
+    
+    if ([segue.destinationViewController isKindOfClass:[LRCAddSpaceObjectViewController class]])
+    {
+        LRCAddSpaceObjectViewController *addSpaceObjectVC = segue.destinationViewController;
+        addSpaceObjectVC.delegate = self;
+    }
 }
 
 
@@ -81,6 +87,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 // #warning Potentially incomplete method implementation.
+    
     // Return the number of sections.
     
     // if there are objects in addedPlanets, there should be 2 sections.
@@ -94,6 +101,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 // #warning Incomplete method implementation.
+    
     // Return the number of rows in the section.
     if (section == 1)
         return [self.addedPlanets count];
@@ -109,7 +117,9 @@
     // Configure the cell...
     if (indexPath.section == 1)
     {
-        
+        LRCSpaceObject *planet = [self.addedPlanets objectAtIndex:indexPath.row];
+        cell.textLabel.text = planet.name;
+        cell.detailTextLabel.text = planet.nickname; 
     }
     else
     {
@@ -127,6 +137,29 @@
     cell.detailTextLabel.textColor = [UIColor colorWithWhite:.5 alpha:1.0];
     
     return cell;
+}
+
+#pragma mark - LRCAddSpaceObjectViewController Delegate
+
+- (void)didCancel
+{
+    NSLog(@"Did cancel");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) addSpaceObject:(LRCSpaceObject *)spaceObject
+{
+    if (!self.addedPlanets)
+    {
+        self.addedPlanets = [[NSMutableArray alloc] init];
+    }
+    
+    [self.addedPlanets addObject:spaceObject];
+    
+    [self.tableView reloadData];
+    
+    NSLog(@"addSpaceObject");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDelegate

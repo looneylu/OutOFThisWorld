@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AstronomicalData.h"
+#import "LRCAddSpaceObjectViewController.h"
 
-@interface OuterSpaceTableViewController : UITableViewController
+@interface OuterSpaceTableViewController : UITableViewController <LRCAddSpaceObjectViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *planets;
 @property (nonatomic, strong) NSMutableArray *addedPlanets; 
