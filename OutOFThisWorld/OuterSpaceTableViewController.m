@@ -57,7 +57,12 @@
             LRCSpaceImageViewController *nextViewController = segue.destinationViewController;
             
             NSIndexPath *path = [self.tableView indexPathForCell:sender];
-            LRCSpaceObject *selectedObject = [self.planets objectAtIndex:path.row];
+            LRCSpaceObject *selectedObject;
+            
+            if (path.section == 0)
+                selectedObject = [self.planets objectAtIndex:path.row];
+            else if (path.section == 1)
+                selectedObject = [self.addedPlanets objectAtIndex:path.row];
             
             nextViewController.spaceObject = selectedObject;
         }
@@ -69,7 +74,12 @@
         {
             LRCSpaceDataViewController *targetViewController = segue.destinationViewController;
             NSIndexPath *path = sender;
-            LRCSpaceObject *selectedObject = [self.planets objectAtIndex:path.row];
+            LRCSpaceObject *selectedObject;
+            if (path.section == 0)
+                selectedObject = [self.planets objectAtIndex:path.row];
+            else if (path.section == 1)
+                selectedObject = [self.addedPlanets objectAtIndex:path.row];
+            
             targetViewController.spaceObject = selectedObject;
         }
     }
@@ -119,7 +129,8 @@
     {
         LRCSpaceObject *planet = [self.addedPlanets objectAtIndex:indexPath.row];
         cell.textLabel.text = planet.name;
-        cell.detailTextLabel.text = planet.nickname; 
+        cell.detailTextLabel.text = planet.nickname;
+        cell.imageView.image = planet.spaceImage;
     }
     else
     {
